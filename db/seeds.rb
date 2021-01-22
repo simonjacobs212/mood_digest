@@ -170,7 +170,7 @@ sad_quote2 = Quote.create (
 
 sad_quote3 = Quote.create (
     mood_id: sad.id,
-    author: "Immanuel Kant",
+    author: "Chinese proverb",
     text: "Happiness is not an ideal of reason, but of imagination.",
     wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
 )
