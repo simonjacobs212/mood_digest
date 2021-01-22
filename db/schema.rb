@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_01_22_155023) do
   create_table "quotes", force: :cascade do |t|
     t.integer "mood_id"
     t.string "author"
-    t.text "text"
+    t.text "body"
     t.string "wiki_link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,6 +55,9 @@ ActiveRecord::Schema.define(version: 2021_01_22_155023) do
   create_table "user_moods", force: :cascade do |t|
     t.integer "user_id"
     t.integer "mood_id"
+    t.integer "quote_id"
+    t.integer "music_id"
+    t.integer "art_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

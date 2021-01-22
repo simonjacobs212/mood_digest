@@ -3,7 +3,7 @@ class CreateQuotes < ActiveRecord::Migration[6.1]
     create_table :quotes do |t|
       t.integer :mood_id
       t.string :author
-      t.text :text
+      t.text :body
       t.string :wiki_link
 
       t.timestamps

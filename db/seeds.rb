@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 UserMood.destroy_all
-# Quote.destroy_all
+Quote.destroy_all
 Music.destroy_all
 Mood.destroy_all
-# Art.destroy_all
+Art.destroy_all
 
 
 john = User.create(username: "jsmith", password: "1234", first_name: "John", last_name: "Smith")
@@ -65,7 +65,7 @@ happy_art2 = Art.create(
             artist: "Claude Michel", 
             genre: "Sculpture",
             year:  "1790-1800",
-            description: "Though never elected to full membership in the Academy, Clodion was one of the most esteemed sculptors of the eighteenth century, and during his first residence in Rome he shared a studio with Jean-Antoine Houdon. Clodion worked frequently with terracotta, or baked clay, a material that was traditionally used by sculptors to explore ideas for larger projects in more expensive materials; it was highly prized by collectors around the middle of the eighteenth century for its sketchy, provisional qualities. Clodion responded to the growing market for terracotta sculpture by producing numerous small-scale works such as these. Toward the end of the century, he favored groups with inverted poses, such as these two figures carrying putti on opposite shoulders and turning in opposite directions, and he embraced the neoclassical style, basing the figures’ drapery and hairstyles on ancient models."
+            description: "Though never elected to full membership in the Academy, Clodion was one of the most esteemed sculptors of the eighteenth century, and during his first residence in Rome he shared a studio with Jean-Antoine Houdon. Clodion worked frequently with terracotta, or baked clay, a material that was traditionally used by sculptors to explore ideas for larger projects in more expensive materials; it was highly prized by collectors around the middle of the eighteenth century for its sketchy, provisional qualities. Clodion responded to the growing market for terracotta sculpture by producing numerous small-scale works such as these. Toward the end of the century, he favored groups with inverted poses, such as these two figures carrying putti on opposite shoulders and turning in opposite directions, and he embraced the neoclassical style, basing the figures’ drapery and hairstyles on ancient models.",
             img_url: "https://nrs.harvard.edu/urn-3:HUAM:DDC111121_dynmc?width=280"
         )
 
@@ -79,24 +79,24 @@ happy_art3 = Art.create(
             img_url: "https://nrs.harvard.edu/urn-3:HUAM:INV021369_dynmc?width=280"
         )
 
-happy_quote1 = Quote.create (
-            mood_id: happy.id
-            author: "Mark Twain -1896",
-            text: "The best way to cheer yourself up is to try to cheer somebody else up.",
+happy_quote1 = Quote.create(
+            mood_id: happy.id,
+            author: "Mark Twain - 1896",
+            body: "The best way to cheer yourself up is to try to cheer somebody else up.",
             wiki_link: "https://en.wikipedia.org/wiki/Mark_Twain"
         )
 
-happy_quote2 = Quote.create (
+happy_quote2 = Quote.create(
             mood_id: happy.id,
             author: "Robert Brault - 2019",
-            text: "I've learned to be happy with what I have, and even if I lost it, I'd still be happy, because (see start of sentence.)",
+            body: "I've learned to be happy with what I have, and even if I lost it, I'd still be happy, because (see start of sentence.)",
             wiki_link: "rbrault.blogspot.com"
         )
 
-happy_quote3 = Quote.create (
-            mood_id: happy.id
-            author: "Robert Brault"
-            text: "Happiness? Simple, really. You don't let short-term concerns ruin your life, and you don't let long-term concerns ruin your day."
+happy_quote3 = Quote.create(
+            mood_id: happy.id,
+            author: "Robert Brault",
+            body: "Happiness? Simple, really. You don't let short-term concerns ruin your life, and you don't let long-term concerns ruin your day.",
             wiki_link: "rbrault.blogspot.com"
         )
 
@@ -154,26 +154,26 @@ sad_art3 = Art.create(
             description: "None"
         )
 
-sad_quote1 = Quote.create (
-    mood_id: sad.id,
-    author: "Immanuel Kant",
-    text: "Happiness is not an ideal of reason, but of imagination.",
-    wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
-)
+sad_quote1 = Quote.create(
+            mood_id: sad.id,
+            author: "Immanuel Kant",
+            body: "Happiness is not an ideal of reason, but of imagination.",
+            wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
+        )
 
-sad_quote2 = Quote.create (
-    mood_id: sad.id,
-    author: "Dan Zadra",
-    text: "Worry is a misuse of imagination.",
-    wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
-)
+sad_quote2 = Quote.create(
+            mood_id: sad.id,
+            author: "Dan Zadra",
+            body: "Worry is a misuse of imagination.",
+            wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
+        )
 
-sad_quote3 = Quote.create (
-    mood_id: sad.id,
-    author: "Chinese proverb",
-    text: "Happiness is not an ideal of reason, but of imagination.",
-    wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
-)
+sad_quote3 = Quote.create(
+            mood_id: sad.id,
+            author: "Chinese proverb",
+            body: "Happiness is not an ideal of reason, but of imagination.",
+            wiki_link: "https://en.wikiquote.org/wiki/Chinese_proverbs"
+        )
 
 
 ############### TIRED #############################
@@ -201,42 +201,81 @@ tired_classical = Music.create(
         )
 
 tired_art1 = Art.create(
-    mood_id: tired.id,
-    title: "Study of the Head of the Sleeping Saint Ursula, after Carpaccio, in the Academy of Venice",
-    artist: "Charles Herbert Moore",
-    genre: "Painting",
-    img_url: "https://nrs.harvard.edu/urn-3:HUAM:DDC234327_dynmc?width=280",
-    year: "1877 - 1878",
-    description: "Copy after detail of 'The Legend of Saint Ursula: Saint Ursula's Dream', in the Gallerie dell'Accademia, Venice."
-)
+            mood_id: tired.id,
+            title: "Study of the Head of the Sleeping Saint Ursula, after Carpaccio, in the Academy of Venice",
+            artist: "Charles Herbert Moore",
+            genre: "Painting",
+            img_url: "https://nrs.harvard.edu/urn-3:HUAM:DDC234327_dynmc?width=280",
+            year: "1877 - 1878",
+            description: "Copy after detail of 'The Legend of Saint Ursula: Saint Ursula's Dream', in the Gallerie dell'Accademia, Venice."
+        )
 
 tired_art2 = Art.create(
-    mood_id: tired.id,
-    title: "The Virgin with the Sleeping Christ Child",
-    artist: "Orazio Gentileschi",
-    genre: "Painting",
-    img_url: "https://nrs.harvard.edu/urn-3:HUAM:49031_dynmc?width=280",
-    year: "c. 1610",
-    description: "None"
-)
+            mood_id: tired.id,
+            title: "The Virgin with the Sleeping Christ Child",
+            artist: "Orazio Gentileschi",
+            genre: "Painting",
+            img_url: "https://nrs.harvard.edu/urn-3:HUAM:49031_dynmc?width=280",
+            year: "c. 1610",
+            description: "None"
+        )
 
 tired_art3 = Art.create(
-    mood_id: tired.id,
-    title: "The Dream of the Damsel",
-    artist: "Fernando Zóbel",
-    genre: "Painting",
-    img_url: "https://nrs.harvard.edu/urn-3:HUAM:VRS49141_dynmc?width=280",
-    year: "1967",
-    description: "None"
-)
+            mood_id: tired.id,
+            title: "The Dream of the Damsel",
+            artist: "Fernando Zóbel",
+            genre: "Painting",
+            img_url: "https://nrs.harvard.edu/urn-3:HUAM:VRS49141_dynmc?width=280",
+            year: "1967",
+            description: "None"
+        )
+
+tired_quote1 = Quote.create(
+            mood_id: tired.id,
+            author: "Aristotle",
+            body: "We give up leisure in order that we may have leisure, just as we go to war in order that we may have peace.",
+            wiki_link: "https://en.wikipedia.org/wiki/Aristotle"
+        )
+
+tired_quote2 = Quote.create(
+            mood_id: tired.id,
+            author: "E. Joseph Cossman",
+            body: "The best bridge between despair and hope is a good night's sleep.",
+            wiki_link: "https://www.latimes.com/archives/la-xpm-2002-dec-19-me-cossman19-story.html"
+        )
+
+tired_quote3 = Quote.create(
+            mood_id: tired.id,
+            author: "Ralph Waldo Emerson",
+            body: "Finish each day before you begin the next, and interpose a solid wall of sleep between the two.",
+            wiki_link: "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
+        )
 
 
 ################## UserMoods ########################
-john_sad = UserMood.create(user_id: john.id, mood_id: sad.id)      
+john_sad = UserMood.create(
+            user_id: john.id, 
+            mood: sad, 
+            music: sad_classical, 
+            art: sad_art2, 
+            quote: sad_quote1
+        )      
 
-ralph_happy = UserMood.create(user_id: ralph.id, mood_id: happy.id)
+ralph_happy = UserMood.create(
+            user_id: ralph.id, 
+            mood: happy, 
+            music: happy_rock, 
+            art: happy_art1, 
+            quote: happy_quote1
+        )
 
-ralph_sad = UserMood.create(user_id: ralph.id, mood_id: sad.id) 
+ralph_sad = UserMood.create(
+            user_id: ralph.id, 
+            mood: sad, 
+            music: sad_rap, 
+            art: sad_art3, 
+            quote: sad_quote2
+        )
 
 #####################################################
 
