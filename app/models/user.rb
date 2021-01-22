@@ -1,2 +1,3 @@
 class User
+    "yo"
 end
