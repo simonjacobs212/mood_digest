@@ -1,0 +1,23 @@
+
+<h2>Please Login Below</h2>
+
+<%= form_tag "/please_login", method: "post" do %>
+    <li>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+    </li>
+
+    <li>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+    </li>
+
+    <%= submit_tag "Login" %>
+
+<% end %>
+
+<%= button_to "Create New User", new_user_path, method: "get"%>
+
+<% if flash.notice %>
+    <%= flash.notice %>
+<% end %>
