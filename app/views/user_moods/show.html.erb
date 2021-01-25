@@ -1,9 +1,39 @@
-<h1>UserMoods#show</h1>
+<h1>Your Daily Mood Digest</h1>
 
-<p>Quote:</p>
-<%=@usermood.quote.body%>
+<h2>Quote:</h2>
+<p><%=@usermood.quote.body%><p>
 <br>
-<p>Author</p>
-<%=@usermood.quote.author%>
+<h4>Author</h4>
+<p><%=@usermood.quote.author%></p>
 
+<h2>Art Title</h2>
+<p><%=@usermood.art.title%></p>
+<br>
+<h4>Year</h4>
+<p><%=@usermood.art.year%></p>
+<br>
+<h4>Artist</h4>
+<p><%=@usermood.art.artist%></p>
+<br>
+<h4>Genre</h4>
+<p><%=@usermood.art.genre%></p>
+<br>
+<h4>Image</h4>
+ <p><img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> /></p>
+<br>
+<h4>Description</h4>
+<p><%=@usermood.art.description%></p>
+<br>
+
+ <h2>Music:</h2>
+ <p><%=@usermood.music.title%></p>
+ <br>
+ <h4>Music Artist:</h4>
+ <p><%=@usermood.music.artist%></p>
+ <br>
+ <h4>Music Genre:</h4>
+ <p><%=@usermood.music.genre%></p>
+ <br>
+ <h4>Music Link:</h4>
+ <p><iframe width="560" height="315" src= <%= @usermood.music.video_link %> frameborder="0" allowfullscreen></iframe></p>
  
