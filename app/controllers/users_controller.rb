@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil 
     redirect_to login_user_path
-    byebug
+    # byebug
   end 
 
   private

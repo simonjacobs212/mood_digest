@@ -1,9 +1,9 @@
 class UserMoodsController < ApplicationController
-  before_action :set_user_mood, only: [:show]
+  before_action :set_user_mood, only: [:show, :destroy]
  
   
   def index
-    @current_user.user_moods
+    @usermoods = @current_user.user_moods
   end
 
   def show
@@ -38,6 +38,9 @@ class UserMoodsController < ApplicationController
   end
 
   def destroy
+    # byebug
+    @usermood.destroy
+    redirect_to user_moods_path
   end
 
   private

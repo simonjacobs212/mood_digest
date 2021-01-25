@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   delete "/logout", to: "users#logout", as: "logout"
 
   ###### user_mood #####
+  get '/user_moods', to: 'user_moods#index', as: 'user_moods'
   get '/user_moods/new', to: 'user_moods#new', as: 'new_user_mood'
   post '/user_moods', to: 'user_moods#create'
   get '/user_moods/:id', to: 'user_moods#show', as: 'user_mood'
+  delete '/user_moods/:id', to: 'user_moods#destroy', as: 'delete_user_mood'
 
   resources :users, only: [:new, :create]
   
