@@ -1,0 +1,4 @@
+<%= form_for @usermood do |f| %>
+<%= f.collection_select :mood_id, Mood.all, :id, :name %>
+<%= f.submit "Select Mood"%>
+<%end%>
