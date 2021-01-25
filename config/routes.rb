@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
   patch '/users/:id', to: 'users#update'
+  delete "/logout", to: "users#logout", as: "logout"
 
   ###### user_mood #####
   get '/user_moods/new', to: 'user_moods#new', as: 'new_user_mood'

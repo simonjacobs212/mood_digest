@@ -1,6 +1,12 @@
 <h1>Welcome</h1>
 
+<%=render '/user_moods/form'%>
+
 <%= button_to 'Edit Settings', edit_user_path(@current_user), method: "get" %>
+<br>
+
+<%=button_to 'Logout', logout_path, method: "delete"%>
+
 
 
 

@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to root_pat
+    redirect_to root_path
   end 
 
   def login
@@ -49,6 +49,7 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil 
     redirect_to login_user_path
+    byebug
   end 
 
   private

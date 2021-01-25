@@ -1,5 +1,6 @@
 class UserMoodsController < ApplicationController
   before_action :set_user_mood, only: [:show]
+ 
   
   def index
     @current_user.user_moods
