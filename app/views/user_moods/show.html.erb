@@ -37,5 +37,6 @@
  <h4>Music Link:</h4>
  <p><iframe width="560" height="315" src= <%= @usermood.music.video_link %> frameborder="0" allowfullscreen></iframe></p>
  <br><br>
+ <%= button_to 'Improve Mood', improve_user_mood_path, method: "patch" %>
  <%= button_to 'Delete Mood', delete_user_mood_path, method: "delete" %>
  
