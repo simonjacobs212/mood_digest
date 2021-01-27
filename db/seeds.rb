@@ -71,31 +71,31 @@ happy_art2 = Art.create(
 
 happy_art3 = Art.create(
             mood_id: happy.id, 
-            title: "Jones Beach", 
-            artist: "Eric Baden", 
-            genre: "Photograph",
-            year: '1979',
+            title: "Lake of Como", 
+            artist: "John Cousen", 
+            genre: "Engraving",
+            year: '1850',
             description: "None",
-            img_url: "https://nrs.harvard.edu/urn-3:HUAM:INV021369_dynmc?width=280"
+            img_url: "https://image.invaluable.com/housePhotos/KCM/29/665629/H5976-L199500121.jpg"
         )
 
 happy_quote1 = Quote.create(
             mood_id: happy.id,
-            author: "-Mark Twain - 1896",
+            author: "Mark Twain - 1896",
             body: "The best way to cheer yourself up is to try to cheer somebody else up.",
             wiki_link: "https://en.wikipedia.org/wiki/Mark_Twain"
         )
 
 happy_quote2 = Quote.create(
             mood_id: happy.id,
-            author: "-Robert Brault - 2019",
+            author: "Robert Brault - 2019",
             body: "I've learned to be happy with what I have, and even if I lost it, I'd still be happy, because (see start of sentence.)",
             wiki_link: "rbrault.blogspot.com"
         )
 
 happy_quote3 = Quote.create(
             mood_id: happy.id,
-            author: "-Robert Brault",
+            author: "Robert Brault",
             body: "Happiness? Simple, really. You don't let short-term concerns ruin your life, and you don't let long-term concerns ruin your day.",
             wiki_link: "rbrault.blogspot.com"
         )
@@ -149,28 +149,28 @@ sad_art3 = Art.create(
             title: "Pepper",
             artist: "Edward Weston",
             genre: "Photograph",
-            img_url: "https://nrs.harvard.edu/urn-3:HUAM:INV024576_dynmc?width=280",
+            img_url: "https://www.sothebys.com/content/dam/stb/lots/N09/N09130/363N09130_7BMDL.jpg",
             year: "1929",
             description: "None"
         )
 
 sad_quote1 = Quote.create(
             mood_id: sad.id,
-            author: "-Immanuel Kant",
+            author: "Immanuel Kant",
             body: "Happiness is not an ideal of reason, but of imagination.",
             wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
         )
 
 sad_quote2 = Quote.create(
             mood_id: sad.id,
-            author: "-Dan Zadra",
+            author: "Dan Zadra",
             body: "Worry is a misuse of imagination.",
             wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
         )
 
 sad_quote3 = Quote.create(
             mood_id: sad.id,
-            author: "-Chinese proverb",
+            author: "Chinese proverb",
             body: "Happiness is not an ideal of reason, but of imagination.",
             wiki_link: "https://en.wikiquote.org/wiki/Chinese_proverbs"
         )
@@ -232,21 +232,21 @@ tired_art3 = Art.create(
 
 tired_quote1 = Quote.create(
             mood_id: tired.id,
-            author: "-Aristotle",
+            author: "Aristotle",
             body: "We give up leisure in order that we may have leisure, just as we go to war in order that we may have peace.",
             wiki_link: "https://en.wikipedia.org/wiki/Aristotle"
         )
 
 tired_quote2 = Quote.create(
             mood_id: tired.id,
-            author: "-E. Joseph Cossman",
+            author: "E. Joseph Cossman",
             body: "The best bridge between despair and hope is a good night's sleep.",
             wiki_link: "https://www.latimes.com/archives/la-xpm-2002-dec-19-me-cossman19-story.html"
         )
 
 tired_quote3 = Quote.create(
             mood_id: tired.id,
-            author: "-Ralph Waldo Emerson",
+            author: "Ralph Waldo Emerson",
             body: "Finish each day before you begin the next, and interpose a solid wall of sleep between the two.",
             wiki_link: "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
         )

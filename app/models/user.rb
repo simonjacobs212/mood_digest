@@ -12,11 +12,5 @@ validates :username,
     uniqueness: {:message => "Username already exisits. Please select a different one."},
     length: {in: 3..15, :message => "Username should be 3-5 characters long", :allow_blank => true}
 
-# def not_logged_in
-#     # byebug
-#     if session[:user_id].nil?
-#         errors.add(:username, "this heroine already has this power")
-#     end
-# end
 
 end

@@ -12,20 +12,21 @@ Rails.application.routes.draw do
   # resources :users, only: [:new, :create]
   
   get '/users', to: 'users#index'
-  get '/users/:id', to: 'users#show', as: 'user'
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+  get '/logout', to: 'users#logout', as: 'logout'
   patch '/users/:id', to: 'users#update'
-  delete "/logout", to: "users#logout", as: "logout"
-
+  delete "/logout", to: 'users#destroy'
+  
+  get '/users/:id', to: 'users#show', as: 'user'
   ###### user_mood #####
   get '/user_moods', to: 'user_moods#index', as: 'user_moods'
   get '/user_moods/new', to: 'user_moods#new', as: 'new_user_mood'
   post '/user_moods', to: 'user_moods#create'
-  get '/user_moods/:id', to: 'user_moods#show', as: 'user_mood'
   patch '/user_moods/:id', to: 'user_moods#improve_user_mood', as: 'improve_user_mood'
   delete '/user_moods/:id', to: 'user_moods#destroy', as: 'delete_user_mood'
-
   
+  
+  get '/user_moods/:id', to: 'user_moods#show', as: 'user_mood'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 # get '/' to: 

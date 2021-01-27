@@ -1,3 +1,72 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    // background: url("zen1.jpeg") repeat 0 0; 
+    background: #080a0b;
+    color: #fff;
+}
+
+section:first-of-type {
+    background: url("zen1.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 100% ;
+}
+
+
+section:not(:first-of-type) {
+    min-height: 100vh;
+    border-top: none;
+}
+
+section:nth-of-type(2) {
+    background: #14181b;
+}
+
+section:nth-of-type(3) {
+    background: #121618;
+}
+
+section:nth-of-type(4) {
+    background: #0d1012;
+}
+
+section:nth-of-type(5) {
+    background: #090c0d;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: #f2709c;
+}
+
+
+.navbar-toggler-icon {
+    float: right;
+    top: -105px;
+}
+
+.py-3 {
+
+    float: left;
+}
+
+.bg-white {
+    margin: 0 0 0 0;
+    font-family: Arial;
+    font-size: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.bootstrap-select .bs-ok-default::after {
+    width: 0.3em;
+    height: 0.6em;
+    border-width: 0 0.1em 0.1em 0;
+    transform: rotate(45deg) translateY(0.5rem);
+}
+
+.btn.dropdown-toggle:focus {
+    outline: none !important;
+}

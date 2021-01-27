@@ -1,17 +1,17 @@
 <!-- Navbar-->
 <header class="header fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <nav class="navbar navbar-collapse-lg navbar-light bg-white shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="http://localhost:3000/">
                 <small class="font-weight-bold mb-0 text-uppercase">Mood Digest</small>
             </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link scroll-link" href="#one">Quote <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
@@ -22,6 +22,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll-link" href="http://localhost:3000/user_moods">Your Moods</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/users/<%=@current_user.id%>/edit">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/logout">Sign Out</a>
                     </li>
                 </ul>
             </div>
@@ -35,7 +41,7 @@
     <div class="container py-5 text-white">
         <header class="py-5 my-lg-5">
             <h1 class="display-4"><%= @greeting %></h1>
-            <p class="font-italic mb-1">Easily create animated page scrolling effect using jquery scrollTo plugin. </p>
+            <p class="font-italic mb-1">Your development bundle</p>
             <p class="font-italic">Snippet by
                 <a class="text-white" href="https://bootstrapious.com/">
                     <u>Bootstrapious</u>
@@ -55,9 +61,15 @@
     <div class="container py-5">
         <div class="row text-center">
             <div class="col-lg-9 mx-auto">
-                <h2 class="h1 mb-4">Your Daily Quote</h2>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.quote.body%></p>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.quote.author%></p>
+            <blockquote class="blockquote">
+                <p class="h1 mb-0">
+                    <%=@usermood.quote.body%>
+                </p>
+                <footer class="blockquote-footer">
+                    <%=link_to @usermood.quote.author, @usermood.quote.wiki_link%>
+                </footer>
+            </blockquote>
+            <br>
                 <!-- Scroll to top -->
                 <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#">Back to top</a>
             </div>
@@ -66,18 +78,24 @@
 </section>
 
 <!-- Demo section 2-->
+
+
 <section class="py-5 d-flex align-items-center" id="two">
     <div class="container py-5">
         <div class="row text-center">
             <div class="col-lg-9 mx-auto">
-                <h2 class="h1 mb-4">Your Daily Art</h2>
-                <h4 class="h1 mb-4">Art Title</h4>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.art.title%><p><%=@usermood.art.year%></p>
-                <h4 class="h1 mb-4">Artist</h4>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.art.artist%><p><%=@usermood.art.genre%></p>
-                <p><img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> /></p>
-                <h4 class="h1 mb-4">Description</h4>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.art.description%><p>
+                    <div class="col-lg-4">
+          <figure class="rounded p-3 bg-white shadow-sm">
+            <img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> class="w-100 card-img-top">
+            <figcaption class="p-4 card-img-bottom">
+              <h2 class="h5 font-weight-bold mb-2 font-italic"><%=@usermood.art.title%></h2>
+              <p class="mb-0 text-small text-muted font-italic"><%=@usermood.art.artist%></p>
+            </figcaption>
+          </figure>
+        </div>
+        <br>
+        <div><p class="mb-0 text-small text-muted font-italic"><%=@usermood.art.description%></p></div>
+        <br>
                 <!-- Scroll to top -->
                 <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
             </div>
@@ -166,3 +184,13 @@
  <%= button_to 'Back', user_moods_path, method: "get" %>
  
 
+
+
+<h2 class="h1 mb-4">Your Daily Art</h2>
+                <h4 class="h1 mb-4">Art Title</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.title%><p><%=@usermood.art.year%></p>
+                <h4 class="h1 mb-4">Artist</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.artist%><p><%=@usermood.art.genre%></p>
+                <p><img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> /></p>
+                <h4 class="h1 mb-4">Description</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.description%><p>

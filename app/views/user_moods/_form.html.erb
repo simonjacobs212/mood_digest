@@ -1,24 +1,10 @@
 
-    <div class="row">
-        <div class="col-lg-6 mx-auto">
-            <label class="text-black mb-3 lead">How are you feeling today?</label>
-            <!-- Multiselect dropdown -->
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100">
-                <option>Happy</option>
-                <option>Sad</option>
-                <option>Tired</option>
-            </select><!-- End -->
-        </div>
+<div class="container py-5">
+    <div class="col-lg-6 mx-auto">
+        <label class="text-black mb-3 lead">How are you feeling today?</label>
+        <%= form_for @usermood do |f| %>
+        <%= f.collection_select :mood_id, Mood.all, :id, :name %>
+        <%= f.submit "Select Mood"%>
+        <%end%>
     </div>
-    
 </div>
-</section>
-
-
-
-
-
-<%= form_for @usermood do |f| %>
-<%= f.collection_select :mood_id, Mood.all, :id, :name %>
-<%= f.submit "Select Mood"%>
-<%end%>

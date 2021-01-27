@@ -12,27 +12,6 @@ class UserMoodsController < ApplicationController
   def new
     @usermood = UserMood.new
   end
-
-  def greeting
-    now = Time.now
-    today = Date.today.to_time
-  
-    morning = today.beginning_of_day
-    noon = today.noon
-    evening = today.change( hour: 17 )
-    night = today.change( hour: 20 )
-    tomorrow = today.tomorrow
-  
-    if (morning..noon).cover? now
-      @greeting = 'Good Morning'
-    elsif (noon..evening).cover? now
-      @greeting = 'Good Afternoon'
-    elsif (evening..night).cover? now
-      @greeting = 'Good Evening'
-    elsif (night..tomorrow).cover? now
-      @greeting = 'Good Night'
-    end
-  end
   
   def create
     mood = Mood.find(params[:user_mood][:mood_id])
