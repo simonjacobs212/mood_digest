@@ -10,5 +10,5 @@ class StaticController < ApplicationController
   def usermood
     @usermood = UserMood.new
   end 
-  
+
 end

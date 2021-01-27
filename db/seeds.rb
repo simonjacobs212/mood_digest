@@ -81,21 +81,21 @@ happy_art3 = Art.create(
 
 happy_quote1 = Quote.create(
             mood_id: happy.id,
-            author: "Mark Twain - 1896",
+            author: "-Mark Twain - 1896",
             body: "The best way to cheer yourself up is to try to cheer somebody else up.",
             wiki_link: "https://en.wikipedia.org/wiki/Mark_Twain"
         )
 
 happy_quote2 = Quote.create(
             mood_id: happy.id,
-            author: "Robert Brault - 2019",
+            author: "-Robert Brault - 2019",
             body: "I've learned to be happy with what I have, and even if I lost it, I'd still be happy, because (see start of sentence.)",
             wiki_link: "rbrault.blogspot.com"
         )
 
 happy_quote3 = Quote.create(
             mood_id: happy.id,
-            author: "Robert Brault",
+            author: "-Robert Brault",
             body: "Happiness? Simple, really. You don't let short-term concerns ruin your life, and you don't let long-term concerns ruin your day.",
             wiki_link: "rbrault.blogspot.com"
         )
@@ -156,21 +156,21 @@ sad_art3 = Art.create(
 
 sad_quote1 = Quote.create(
             mood_id: sad.id,
-            author: "Immanuel Kant",
+            author: "-Immanuel Kant",
             body: "Happiness is not an ideal of reason, but of imagination.",
             wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
         )
 
 sad_quote2 = Quote.create(
             mood_id: sad.id,
-            author: "Dan Zadra",
+            author: "-Dan Zadra",
             body: "Worry is a misuse of imagination.",
             wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
         )
 
 sad_quote3 = Quote.create(
             mood_id: sad.id,
-            author: "Chinese proverb",
+            author: "-Chinese proverb",
             body: "Happiness is not an ideal of reason, but of imagination.",
             wiki_link: "https://en.wikiquote.org/wiki/Chinese_proverbs"
         )
@@ -232,21 +232,21 @@ tired_art3 = Art.create(
 
 tired_quote1 = Quote.create(
             mood_id: tired.id,
-            author: "Aristotle",
+            author: "-Aristotle",
             body: "We give up leisure in order that we may have leisure, just as we go to war in order that we may have peace.",
             wiki_link: "https://en.wikipedia.org/wiki/Aristotle"
         )
 
 tired_quote2 = Quote.create(
             mood_id: tired.id,
-            author: "E. Joseph Cossman",
+            author: "-E. Joseph Cossman",
             body: "The best bridge between despair and hope is a good night's sleep.",
             wiki_link: "https://www.latimes.com/archives/la-xpm-2002-dec-19-me-cossman19-story.html"
         )
 
 tired_quote3 = Quote.create(
             mood_id: tired.id,
-            author: "Ralph Waldo Emerson",
+            author: "-Ralph Waldo Emerson",
             body: "Finish each day before you begin the next, and interpose a solid wall of sleep between the two.",
             wiki_link: "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
         )

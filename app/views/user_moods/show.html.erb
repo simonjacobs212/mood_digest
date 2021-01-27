@@ -1,3 +1,126 @@
+<!-- Navbar-->
+<header class="header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <small class="font-weight-bold mb-0 text-uppercase">Mood Digest</small>
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link scroll-link" href="#one">Quote <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#two">Art</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#three">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/user_moods">Your Moods</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Demo header-->
+<section class="py-5 header text-center text-white mt-5" id="hero">
+    <div class="container py-5 text-white">
+        <header class="py-5 my-lg-5">
+            <h1 class="display-4"><%= @greeting %></h1>
+            <p class="font-italic mb-1">Easily create animated page scrolling effect using jquery scrollTo plugin. </p>
+            <p class="font-italic">Snippet by
+                <a class="text-white" href="https://bootstrapious.com/">
+                    <u>Bootstrapious</u>
+                </a>
+            </p>
+            <p class="font-italic">Plugin used in this snippet:
+                <a class="text-white" href="https://github.com/cferdinandi/smooth-scroll" target="_blank">
+                    <u>Smooth Scroll</u>
+                </a>
+            </p>
+        </header>
+    </div>
+</section>
+
+<!-- Quote section 1 -->
+<section class="py-5 d-flex align-items-center" id="one">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Your Daily Quote</h2>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.quote.body%></p>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.quote.author%></p>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo section 2-->
+<section class="py-5 d-flex align-items-center" id="two">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Your Daily Art</h2>
+                <h4 class="h1 mb-4">Art Title</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.title%><p><%=@usermood.art.year%></p>
+                <h4 class="h1 mb-4">Artist</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.artist%><p><%=@usermood.art.genre%></p>
+                <p><img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> /></p>
+                <h4 class="h1 mb-4">Description</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.art.description%><p>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Music section 3 -->
+<section class="py-5 d-flex align-items-center" id="three">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Your Daily Music</h2>
+                <h4 class="h1 mb-4">Title</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.music.title%></p>
+                <h4 class="h1 mb-4">Artist</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.music.artist%></p>
+                <h4 class="h1 mb-4">Genre</h4>
+                <p class="font-italic mb-4 text-muted"><%=@usermood.music.genre%></p>
+                <h4 class="h1 mb-4">Music Link</h4>
+                <p class="font-italic mb-4 text-muted"><iframe width="560" height="315" src= <%= @usermood.music.video_link %> frameborder="0" allowfullscreen></iframe></p>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo section 4 -->
+<%# <section class="py-5 d-flex align-items-center" id="four">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Demo section 4</h2>
+                <p class="font-italic mb-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section> %>
+
+
 <h1>Your Daily Mood Digest</h1>
 
 <h2>Quote:</h2>
@@ -39,4 +162,7 @@
  <br><br>
  <%= button_to 'Improve Mood', improve_user_mood_path, method: "patch" %>
  <%= button_to 'Delete Mood', delete_user_mood_path, method: "delete" %>
+ <br><br>
+ <%= button_to 'Back', user_moods_path, method: "get" %>
  
+

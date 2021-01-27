@@ -1,5 +1,12 @@
-<h1>Good Morning</h1>
 
+<section class="py-5 header text-center text-white mt-5" id="hero">
+<div class="container py-5">
+    <!-- For demo purpose -->
+    <div class="row text-center text-black mb-5 py-4">
+        <div class="col-lg-9 mx-auto">
+            <h1 class="display-4"><%= @greeting %>, <%=@current_user.first_name%></h1>
+        </div>
+    </div><!-- End -->
 <%=render '/user_moods/form'%>
 
 <%= button_to 'Edit Settings', edit_user_path(@current_user), method: "get" %>
