@@ -39,36 +39,36 @@ class UserMoodsController < ApplicationController
     @usermood = UserMood.create(
       user_id: @current_user.id,
       mood_id: mood.id,
-      quote_id: random_quote(mood),
-      art_id: random_art(mood),
-      music_id: random_music(mood)
+      quote_id: random_quote_id(mood),
+      art_id: random_art_id(mood),
+      music_id: random_music_id(mood)
     )
     # byebug
     redirect_to user_mood_path(@usermood)
   end
 
-  def random_quote(mood)
+  def random_quote_id(mood)
     Quote.all.select {|quote| quote.mood.id == mood.id}.sample.id
   end
 
-  def random_art(mood)
+  def random_art_id(mood)
     Art.all.select {|art| art.mood.id == mood.id}.sample.id
   end
 
-  def random_music(mood)
+  def random_music_id(mood)
     Music.all.select {|music| music.mood.id == mood.id}.sample.id
   end
 
-  def improve
+  def improve_user_mood
     @usermood = UserMood.find(params[:id])
     mood = @usermood.mood
     new_mood = improve_mood(mood)
     @usermood.update(
       user_id: @current_user.id,
       mood_id: new_mood.id,
-      quote_id: random_quote(new_mood),
-      art_id: random_art(new_mood),
-      music_id: random_music(new_mood)
+      quote_id: random_quote_id(new_mood),
+      art_id: random_art_id(new_mood),
+      music_id: random_music_id(new_mood)
     )
     byebug
     redirect_to user_mood_path(@usermood)
