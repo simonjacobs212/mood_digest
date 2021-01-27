@@ -186,14 +186,14 @@ tired_rock = Music.create(
             url: "https://www.youtube.com/watch?v=7cqHtGb9WYM"
         )
 tired_rap = Music.create(
-            mood_id: sad.id, 
+            mood_id: tired.id, 
             title: "I Don't Get Tired", 
             artist: "Kevin Gates", 
             genre: "Rap", 
             url: "https://www.youtube.com/watch?v=_gB2iWln0ls"
         )
 tired_classical = Music.create(
-            mood_id: sad.id, 
+            mood_id: tired.id, 
             title: "Clair de Lune", 
             artist: "Debussy", 
             genre: "Classical", 
