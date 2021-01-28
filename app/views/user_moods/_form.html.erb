@@ -4,9 +4,11 @@
         <label class="text-black mb-3 lead">How are you feeling today?</label>
         <br>
         <%= form_for @usermood do |f| %>
-        <%= f.collection_select :mood_id, Mood.all, :id, :name %>
-        <%= f.submit "Select Mood"%>
+        <%= f.collection_select :mood_id, Mood.all, :id, :name, class:"selectpicker w-100" %>
+        <%= f.submit "Select Mood", class: "btn btn-outline-light px-4 rounded-0 scroll-top" %>
         <%end%>
+        <br>
+        <br>
         <br>
     </div>
 </div>

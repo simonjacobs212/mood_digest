@@ -29,9 +29,9 @@
 <div class="container py-5">
     <!-- For demo purpose -->
     <div class="row text-center text-black mb-5 py-4">
-        <div class="col-lg-9 mx-auto">
-            <h1>Edit User Info</h1>
-        <%= form_for @current_user do |f|%>
+        <div class="h2font col-lg-9 mx-auto">
+            <h2>Edit User Info</h2>
+        <p><%= form_for @current_user do |f|%>
         <%=f.label :first_name%><br>
         <%=f.text_field :first_name%><br>
         <%=f.label :last_name%><br>
@@ -40,8 +40,9 @@
         <%=f.text_field :username%><br>
         <%=f.label :password%><br>
         <%=f.password_field :password%><br>
+        <br> 
         <%=f.submit "Update Info"%>
-        <%end%>
+        <%end%></p>
         </div>
     </div>
 
