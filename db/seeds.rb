@@ -100,7 +100,7 @@ happy_quote3 = Quote.create(
             wiki_link: "rbrault.blogspot.com"
         )
 
-##################### SAD! ########################################
+##################### SAD! #########################################
 sad_rock = Music.create(
             mood_id: sad.id, 
             title: "Plush", 
