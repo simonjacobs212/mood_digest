@@ -90,14 +90,14 @@ happy_quote2 = Quote.create(
             mood_id: happy.id,
             author: "Robert Brault - 2019",
             body: "I've learned to be happy with what I have, and even if I lost it, I'd still be happy, because (see start of sentence.)",
-            wiki_link: "rbrault.blogspot.com"
+            wiki_link: "https://www.rbrault.blogspot.com"
         )
 
 happy_quote3 = Quote.create(
             mood_id: happy.id,
             author: "Robert Brault",
             body: "Happiness? Simple, really. You don't let short-term concerns ruin your life, and you don't let long-term concerns ruin your day.",
-            wiki_link: "rbrault.blogspot.com"
+            wiki_link: "https://www.rbrault.blogspot.com"
         )
 
 ##################### SAD! #########################################
@@ -158,7 +158,7 @@ sad_quote1 = Quote.create(
             mood_id: sad.id,
             author: "Immanuel Kant",
             body: "Happiness is not an ideal of reason, but of imagination.",
-            wiki_link: "https://en.wikipedia.org/wiki/Immanuel_Kant"
+            wiki_link: "http://zadracreative.com/about/"
         )
 
 sad_quote2 = Quote.create(

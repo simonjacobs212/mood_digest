@@ -16,38 +16,52 @@
 </header>
 
 <!--Body-->
-<section class="py-5 header text-center text-white mt-5" id="uniqhero">
+<section class="py-5 header text-center text-white mt-5" id="hero">
 <div class="container py-5">
 
 <!---login-->
 
   <div class="row text-center text-black mb-5 py-4">
-        <div class="col-lg-6 mx-auto">
-            <h2>Please Login Below</h2>
-
+        <div class="col-lg-9 mx-auto">
+            <h2>Your journey to personal betterment awaits...</h2>
+            </div>
+            </div> 
+            <br>
+        
+<li class="login-form" style="list-style-type:none;">
 <%= form_tag "/please_login", method: "post" do %>
-    <li>
+    
     <%= label_tag :username %>
     <%= text_field_tag :username %>
-    </li>
-
-    <li>
     <%= label_tag :password %>
     <%= password_field_tag :password %>
-    </li>
 
+     <br>
+
+
+    <br>
+    <br>
+    <br>
+<br>
+<br>
     <%= submit_tag "Login" %>
+     </li>
+     <br>
 
 <% end %>
-
+<br>
 <%= button_to "Create New User", new_user_path, method: "get"%>
-
+ <br>
+  <br>
+   <br>
+   
 <% if flash.notice %>
     <%= flash.notice %>
 <% end %>
         </div>
     </div>
+    </section>
 
-
+<!-----Footer--->
 
 

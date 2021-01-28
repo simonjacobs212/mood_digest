@@ -1,13 +1,44 @@
-<h1>Register as New User</h1>
+<!--Header-->
+<header class="header fixed-top">
+    <nav class="navbar navbar-collapse-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container container-link" href="http://localhost:3000/">
+            <a class="navbar-brand" href="http://localhost:3000/">
+                <small class="font-weight-bold mb-0 text-uppercase">Mood Digest</small>
+            </a>
 
-<%= form_for @user do |f| %>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %><br>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %><br>
-    <%= f.label :username %><br>
-    <%= f.text_field :username %><br>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
-    <%= f.submit %><br>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Body-->
+<section class="py-5 header text-center text-white mt-5" id="hero">
+<div class="container py-5">
+
+<div class="row text-center text-black mb-5 py-4">
+        <div class="col-lg-9 mx-auto">
+            <h2>Register</h2>
+            </div>
+            </div> 
+            <br>
+
+<div class="login-form2"><%= form_for @user do |f| %>
+    <%= f.label :first_name %> <%= f.text_field :first_name %>
+    <br>
+    <br>
+    <%= f.label :last_name %> <%= f.text_field :last_name %>
+    <br>
+    <br>
+    <%= f.label :username %> <%= f.text_field :username %>
+    <br>
+    <br>
+    <%= f.label :password %> <%= f.password_field :password %>
+    <br>
+    <br>
+    <%= f.submit %>
+    <br>
+    <br>
 <%end%>

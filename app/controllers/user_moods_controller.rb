@@ -1,5 +1,5 @@
 class UserMoodsController < ApplicationController
-  before_action :set_user_mood, only: [:show, :destroy]
+  before_action :set_user_mood, only: [:show, :destroy, :update]
   before_action :greeting, only: [:show, :index]
  
   def index
@@ -22,7 +22,6 @@ class UserMoodsController < ApplicationController
       art_id: random_art_id(mood),
       music_id: random_music_id(mood)
     )
-    # byebug
     redirect_to user_mood_path(@usermood)
   end
 
@@ -38,23 +37,28 @@ class UserMoodsController < ApplicationController
     Music.all.select {|music| music.mood.id == mood.id}.sample.id
   end
 
+  def update
+  end
+
   def improve_user_mood
     @usermood = UserMood.find(params[:id])
     mood = @usermood.mood
     new_mood = improve_mood(mood)
-    @usermood.update(
-      user_id: @current_user.id,
-      mood_id: new_mood.id,
-      quote_id: random_quote_id(new_mood),
-      art_id: random_art_id(new_mood),
-      music_id: random_music_id(new_mood)
-    )
-    byebug
-    redirect_to user_mood_path(@usermood)
+    if new_mood.id == 1
+      redirect_to user_mood_path(@usermood), notice: "You're already happy, we wouldn't want to change that."
+    else
+      @usermood.update(
+        user_id: @current_user.id,
+        mood_id: new_mood.id,
+        quote_id: random_quote_id(new_mood),
+        art_id: random_art_id(new_mood),
+        music_id: random_music_id(new_mood)
+      )
+      redirect_to user_mood_path(@usermood)
+    end
   end
 
   def destroy
-    # byebug
     @usermood.destroy
     redirect_to user_moods_path
   end

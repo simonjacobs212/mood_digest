@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   get '/user_moods', to: 'user_moods#index', as: 'user_moods'
   get '/user_moods/new', to: 'user_moods#new', as: 'new_user_mood'
   post '/user_moods', to: 'user_moods#create'
-  patch '/user_moods/:id', to: 'user_moods#improve_user_mood', as: 'improve_user_mood'
-  delete '/user_moods/:id', to: 'user_moods#destroy', as: 'delete_user_mood'
+  get '/user_moods/:id/improve', to: 'user_moods#improve_user_mood', as: 'improve_user_mood'
+  patch '/user_moods/:id', to: 'user_moods#improve_user_mood'
+  get '/user_moods/:id/delete', to: 'user_moods#destroy', as: 'delete_user_mood'
+  delete '/user_moods/:id', to: 'user_moods#destroy'
   
   
   get '/user_moods/:id', to: 'user_moods#show', as: 'user_mood'
