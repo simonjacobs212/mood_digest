@@ -1,0 +1,57 @@
+<!--Header-->
+<header class="header fixed-top">
+    <nav class="navbar navbar-collapse-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container container-link" href="http://localhost:3000/">
+            <a class="navbar-brand" href="http://localhost:3000/">
+                <small class="font-weight-bold mb-0 text-uppercase">Mood Digest</small>
+            </a>
+            <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/user_moods">Your Moods</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/users/<%=@current_user.id%>/edit">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/logout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="py-5 header text-center text-white mt-5" id="hero">
+<div class="container py-5 text-white">
+   <header class="py-5 my-lg-5">
+    <h1 class="h2fontlog">Mood History:
+    <br>
+    <br>
+    </div>
+       
+    </header>
+</div> 
+</section>
+        
+<section class="py-5 d-flex align-items-center" id="three">
+    <div class="container py-5 text-white">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <% @usermoods.each do |usermood| %>
+                 <li class="h2fontlog" style="list-style-type:none;"><%= link_to usermood.mood.name, user_mood_path(usermood) %> (<%=usermood.created_at.strftime('%A, %B %d, %Y') %>)
+
+                <%end%>
+                <!-- Scroll to top -->
+                <br><br>
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+        

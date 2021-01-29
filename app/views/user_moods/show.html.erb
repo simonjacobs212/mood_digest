@@ -1,0 +1,118 @@
+<!-- Navbar-->
+<header class="header fixed-top">
+    <nav class="navbar navbar-collapse-lg navbar-light bg-white shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand" href="http://localhost:3000/">
+                <small class="font-weight-bold mb-0 text-uppercase">Mood Digest</small>
+            </a>
+            <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/user_moods">Your Moods</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/users/<%=@current_user.id%>/edit">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="http://localhost:3000/logout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Demo header-->
+<section class="py-5 header text-center text-white mt-5" id="hero">
+    <div class="container py-5 text-white">
+            <p class="font-bigbold">
+                <% if flash.notice %>
+                    <%= flash.notice %>
+                <% end %>
+            </p>
+        <header class="py-5 my-lg-3">
+            <header class="display-4">Daily Mood Digest</div>
+    
+            <p class="font-italic">“There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.” 
+            </p>
+            <p class="font-italic">― Ernest Hemingway
+            </p>
+            <br><br>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#one">Daily Quote</a>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#two">Daily Art</a>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#three">Daily Music</a>
+        </header>
+    </div>
+</section>
+
+<!-- Quote section 1 -->
+<section class="py-5 d-flex align-items-center" id="one">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+            <blockquote class="blockquote">
+                <p class="h1 mb-0">
+                    <%=@usermood.quote.body%>
+                </p>
+                <footer class="blockquote-footer">
+                    <%=link_to @usermood.quote.author, @usermood.quote.wiki_link%>
+                </footer>
+            </blockquote>
+            <br>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Art section 2-->
+
+
+<section class="py-5 d-flex align-items-center" id="two">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                    <div class="col-lg-4">
+          <figure class="rounded p-3 bg-white shadow-sm">
+            <img src=<%=@usermood.art.img_url%> alt=<%=@usermood.art.title%> class="w-100 card-img-top">
+            <figcaption class="p-4 card-img-bottom">
+              <h2 class="h5 font-weight-bold mb-2 font-italic"><%=@usermood.art.title%></h2>
+              <p class="mb-0 text-small text-muted font-italic"><%=@usermood.art.artist%></p>
+            </figcaption>
+          </figure>
+        </div>
+        <br>
+        <div><p class="mb-0 text-small text-muted font-italic"><%=@usermood.art.description%></p></div>
+        <br>
+                <!-- Scroll to top -->
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Music section 3 -->
+<section class="py-5 d-flex align-items-center" id="three">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-lg-9 mx-auto">
+                <h2 class="h1 mb-4">Music</h2>
+                <p class="font-italic mb-4 text-muted">Title: <%=@usermood.music.title%></p>
+                <p class="font-italic mb-4 text-muted">Artist: <%=@usermood.music.artist%></p>
+                <p class="font-italic mb-4 text-muted">Genre: <%=@usermood.music.genre%></p>
+                <p class="font-italic mb-4 text-muted"><iframe width="560" height="315" src= <%= @usermood.music.video_link %> frameborder="0" allowfullscreen></iframe></p>
+                <!-- Scroll to top -->
+                <br><br>
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#hero">Back to top</a>
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="http://localhost:3000/user_moods/<%=@usermood.id%>/improve">Improve Mood</a>
+                <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="http://localhost:3000/user_moods/<%=@usermood.id%>/delete">Delete Mood</a>
+            </div>
+        </div>
+    </div>
+</section>
