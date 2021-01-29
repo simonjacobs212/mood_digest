@@ -43,10 +43,10 @@ class UserMoodsController < ApplicationController
   def improve_user_mood
     @usermood = UserMood.find(params[:id])
     mood = @usermood.mood
-    new_mood = improve_mood(mood)
-    if new_mood.id == 1
+    if mood.id == 1
       redirect_to user_mood_path(@usermood), notice: "You're already happy, we wouldn't want to change that."
     else
+      new_mood = improve_mood(mood)
       @usermood.update(
         user_id: @current_user.id,
         mood_id: new_mood.id,
@@ -74,7 +74,6 @@ class UserMoodsController < ApplicationController
   end
 
   def improve_mood(mood)
-    #if happy, cannot change mood.
     if mood.id == 1
       return mood
     elsif mood.id == 2

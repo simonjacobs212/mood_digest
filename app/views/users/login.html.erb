@@ -23,7 +23,7 @@
 
   <div class="row text-center text-black mb-5 py-4">
         <div class="col-lg-9 mx-auto">
-            <h2 class="h2font">Your journey to personal betterment awaits...</h2>
+            <h2 class="h2fontlog">Your journey to personal betterment awaits...</h2>
             <br>
             <br>
             <br> 
@@ -31,23 +31,28 @@
             </div> 
             <br>
        <div>
-<div class="h2font row" style="list-style-type:none;">
+<div class="h2fontlog row" style="list-style-type:none;">
 <div class="col-md-6 offset-md-3">
 <%= form_tag "/please_login", method: "post" do %>
-    
+    <li>
     <%= label_tag :username %>
+    </li>
+    <li>
     <%= text_field_tag :username %>
+    </li>
+    <li>
     <%= label_tag :password %>
+    </li>
     <%= password_field_tag :password %>
     <br>
     <br> 
     <%= submit_tag "Login", class:"btn btn-outline-light px-4 rounded-0 scroll-top" %>
 </div>
 </div> 
-     </li>
+
 <% end %>
 <br> 
-<div class="h2font">
+<div class="h2fontlog">
 <%= button_to "Register", new_user_path, method: "get", class: "btn btn-outline-light px-4 rounded-0 scroll-top" %>
 </div> 
 <br>

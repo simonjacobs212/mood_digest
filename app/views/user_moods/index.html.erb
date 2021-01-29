@@ -30,7 +30,7 @@
 <section class="py-5 header text-center text-white mt-5" id="hero">
 <div class="container py-5 text-white">
    <header class="py-5 my-lg-5">
-    <h1 class="h2font">Mood History:
+    <h1 class="h2fontlog">Mood History:
     <br>
     <br>
     </div>
@@ -44,7 +44,7 @@
         <div class="row text-center">
             <div class="col-lg-9 mx-auto">
                 <% @usermoods.each do |usermood| %>
-                 <li class="h2font" style="list-style-type:none;"><%= link_to usermood.mood.name, user_mood_path(usermood) %> (<%=usermood.created_at.strftime('%A, %B %d, %Y') %>)
+                 <li class="h2fontlog" style="list-style-type:none;"><%= link_to usermood.mood.name, user_mood_path(usermood) %> (<%=usermood.created_at.strftime('%A, %B %d, %Y') %>)
 
                 <%end%>
                 <!-- Scroll to top -->

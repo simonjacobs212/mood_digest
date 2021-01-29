@@ -12,15 +12,6 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#one">Daily Quote <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#two">Daily Art</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#three">Daily Music</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link scroll-link" href="http://localhost:3000/user_moods">Your Moods</a>
                     </li>
                      <li class="nav-item">
@@ -39,7 +30,12 @@
 <!-- Demo header-->
 <section class="py-5 header text-center text-white mt-5" id="hero">
     <div class="container py-5 text-white">
-        <header class="py-5 my-lg-5">
+            <p class="font-bigbold">
+                <% if flash.notice %>
+                    <%= flash.notice %>
+                <% end %>
+            </p>
+        <header class="py-5 my-lg-3">
             <header class="display-4">Daily Mood Digest</div>
     
             <p class="font-italic">“There is nothing noble in being superior to your fellow man; true nobility is being superior to your former self.” 
@@ -47,11 +43,9 @@
             <p class="font-italic">― Ernest Hemingway
             </p>
             <br><br>
-            <p class="font-bigbold">
-                <% if flash.notice %>
-                    <%= flash.notice %>
-                <% end %>
-            </p>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#one">Daily Quote</a>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#two">Daily Art</a>
+            <a class="btn btn-outline-light px-4 rounded-0 scroll-top" href="#three">Daily Music</a>
         </header>
     </div>
 </section>
@@ -108,10 +102,10 @@
     <div class="container py-5">
         <div class="row text-center">
             <div class="col-lg-9 mx-auto">
-                <h2 class="h1 mb-4">Your Music</h2>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.music.title%></p>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.music.artist%></p>
-                <p class="font-italic mb-4 text-muted"><%=@usermood.music.genre%></p>
+                <h2 class="h1 mb-4">Music</h2>
+                <p class="font-italic mb-4 text-muted">Title: <%=@usermood.music.title%></p>
+                <p class="font-italic mb-4 text-muted">Artist: <%=@usermood.music.artist%></p>
+                <p class="font-italic mb-4 text-muted">Genre: <%=@usermood.music.genre%></p>
                 <p class="font-italic mb-4 text-muted"><iframe width="560" height="315" src= <%= @usermood.music.video_link %> frameborder="0" allowfullscreen></iframe></p>
                 <!-- Scroll to top -->
                 <br><br>
