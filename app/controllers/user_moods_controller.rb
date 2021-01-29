@@ -45,6 +45,8 @@ class UserMoodsController < ApplicationController
     mood = @usermood.mood
     if mood.id == 1
       redirect_to user_mood_path(@usermood), notice: "You're already happy, we wouldn't want to change that."
+    elsif mood.id == 4
+      redirect_to user_mood_path(@usermood), notice: "You're inspired, we wouldn't want to change that."
     else
       new_mood = improve_mood(mood)
       @usermood.update(
@@ -78,8 +80,10 @@ class UserMoodsController < ApplicationController
       return mood
     elsif mood.id == 2
       return Mood.find(1)
-    else mood.id == 3
+    elsif mood.id == 3
       return Mood.find(1)
+    else mood.id == 5
+      return Mood.find(4)
     end
   end
 

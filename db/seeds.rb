@@ -21,6 +21,8 @@ chris = User.create(username: "cbrown", password: "1234", first_name: "Chris", l
 happy = Mood.create(name: "Happy")
 sad = Mood.create(name: "Sad")
 tired = Mood.create(name: "Tired")
+inspired = Mood.create(name: "Inspired")
+melancholy = Mood.create(name: "Melancholy")
 
 #################### HAPPY ############################
 happy_rock = Music.create(
@@ -66,7 +68,7 @@ happy_art2 = Art.create(
             genre: "Sculpture",
             year:  "1790-1800",
             description: "Though never elected to full membership in the Academy, Clodion was one of the most esteemed sculptors of the eighteenth century, and during his first residence in Rome he shared a studio with Jean-Antoine Houdon. Clodion worked frequently with terracotta, or baked clay, a material that was traditionally used by sculptors to explore ideas for larger projects in more expensive materials; it was highly prized by collectors around the middle of the eighteenth century for its sketchy, provisional qualities. Clodion responded to the growing market for terracotta sculpture by producing numerous small-scale works such as these. Toward the end of the century, he favored groups with inverted poses, such as these two figures carrying putti on opposite shoulders and turning in opposite directions, and he embraced the neoclassical style, basing the figures’ drapery and hairstyles on ancient models.",
-            img_url: "https://nrs.harvard.edu/urn-3:HUAM:DDC111121_dynmc?width=280"
+            img_url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/192727/481088/main-image"
         )
 
 happy_art3 = Art.create(
@@ -249,6 +251,161 @@ tired_quote3 = Quote.create(
             author: "Ralph Waldo Emerson",
             body: "Finish each day before you begin the next, and interpose a solid wall of sleep between the two.",
             wiki_link: "https://en.wikipedia.org/wiki/Ralph_Waldo_Emerson"
+        )
+
+
+################# INSPIRED ##########################################
+inspired_rock = Music.create(
+            mood_id: inspired.id, 
+            title: "We Will Rock You", 
+            artist: "Queen", 
+            genre: "Rock", 
+            url: "https://www.youtube.com/watch?v=-tJYN-eG1zk"
+        )
+
+inspired_rap = Music.create(
+            mood_id: inspired.id, 
+            title: "Lose Yourself", 
+            artist: "Eminem", 
+            genre: "Rap", 
+            url: "https://www.youtube.com/watch?v=_Yhyp-_hX2s"
+        )
+
+inspired_classical = Music.create(
+            mood_id: inspired.id, 
+            title: "Funeral March", 
+            artist: "Ptrick Cassidy", 
+            genre: "Classical", 
+            url: "https://www.youtube.com/watch?v=S3yprPHfKlE&list=PL8N7R6HuqJAy7R3H76hYyte_T_vMq1KlE&index=12"
+        )
+
+inspired_art1 = Art.create(
+            mood_id: inspired.id,
+            title: "Wanderer Above the Sea of Fog(Der Wanderer über dem Nebelmeer)",
+            artist: "Caspar David Friedrich",
+            genre: "Painting",
+            img_url: "https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/lrg/9781/0964/9781096495925.jpg",
+            year: "1818",
+            description: "In the foreground, a young man stands upon a rocky precipice with his back to the viewer. He is wrapped in a dark green overcoat, and grips a walking stick in his right hand. His hair caught in a wind, the wanderer gazes out on a landscape covered in a thick sea of fog. In the middle ground, several other ridges, perhaps not unlike the ones the wanderer himself stands upon, jut out from the mass. Through the wreaths of fog, forests of trees can be perceived atop these escarpments. In the far distance, faded mountains rise in the left, gently leveling off into lowland plains in the right. Beyond here, the pervading fog stretches out indefinitely, eventually commingling with the horizon and becoming indistinguishable from the cloud-filled sky."
+        )
+
+inspired_art2 = Art.create(
+            mood_id: inspired.id,
+            title: "Fearless Girl",
+            artist: "Kristen Vispal",
+            genre: "Statue",
+            img_url: "https://content.fortune.com/wp-content/uploads/2017/03/wall-street-bull-girl-petition.jpg",
+            year: "2017",
+            description: 'Fearless Girl is meant to "send a message" about workplace gender diversity and encourage companies to recruit women to their boards. The plaque below the statue stated: "Know the power of women in leadership. SHE makes a difference," with SHE referring to both the gender of the subject and the funds NASDAQ ticker symbol.'
+        )
+
+inspired_art3 = Art.create(
+            mood_id: inspired.id,
+            title: "V J Day Kiss",
+            artist: "Victor Jorgensen",
+            genre: "Photograph",
+            img_url: "https://webneel.com/daily/sites/default/files/images/daily/06-2013/31-inspiring-photograph.jpg",
+            year: "1945",
+            description: "New York City celebrating the surrender of Japan. They threw anything and kissed anybody in Times Square." 
+        )
+
+inspired_quote1 = Quote.create(
+            mood_id: inspired.id,
+            author: "Walt Disney",
+            body: "The Best Way To Get Started Is To Quit Talking And Begin Doing.",
+            wiki_link: "https://en.wikipedia.org/wiki/Walt_Disney"
+        )
+
+inspired_quote2 = Quote.create(
+            mood_id: inspired.id,
+            author: "Miyamoto Mushashi",
+            body: "There is nothing outside of yourself that can ever enable you to get better, stronger, richer, quicker, or smarter. Everything is within. Everything exists. Seek nothing outside of yourself.",
+            wiki_link: "https://en.wikipedia.org/wiki/Miyamoto_Musashi"
+        )
+
+inspired_quote3 = Quote.create(
+            mood_id: inspired.id,
+            author: "Helen Keller",
+            body: "Security Is Mostly A Superstition. Life Is Either A Daring Adventure Or Nothing.",
+            wiki_link: "https://en.wikipedia.org/wiki/Helen_Keller"
+        )
+
+############### DISCOURAGED #############################
+
+melancholy_rock = Music.create(
+            mood_id: melancholy.id, 
+            title: "Adam's Song", 
+            artist: "Blink-182", 
+            genre: "Rock", 
+            url: "https://www.youtube.com/watch?v=2MRdtXWcgIw"
+        )
+
+melancholy_rap = Music.create(
+            mood_id: melancholy.id, 
+            title: "Mockingbird", 
+            artist: "Eminem", 
+            genre: "Rap", 
+            url: "https://www.youtube.com/watch?v=9kznlAwE-8o"
+        )
+
+melancholy_classical = Music.create(
+            mood_id: melancholy.id, 
+            title: "String Quartet no. 14, 1st movement", 
+            artist: "Beethoven", 
+            genre: "Classical", 
+            url: "https://www.youtube.com/watch?v=zApj5uJvLZQ"
+        )
+
+melancholy_art1 = Art.create(
+            mood_id: melancholy.id,
+            title: "Mary Magdalene as Melancholy",
+            artist: "Artemisia Gentileschi",
+            genre: "Oil on Canvas",
+            img_url: "https://upload.wikimedia.org/wikipedia/commons/b/b0/3415_Mar%C3%ADa_Magdalena_como_melancol%C3%ADa.jpg",
+            year: "1622 – 1625",
+            description: "Mary Magdalene as Melancholy is a 1622–1625 painting by Artemisia Gentileschi, showing Mary Magdalene as a personification of Melancholia. It is now in the Museo Soumaya in Mexico City."
+        )
+
+melancholy_art2 = Art.create(
+            mood_id: melancholy.id,
+            title: "Shades of Melancholy",
+            artist: "Eric Lacombe",
+            genre: "Painting",
+            img_url: "https://i.pinimg.com/564x/9a/0e/99/9a0e99204698fa681e221078e1895303.jpg",
+            year: "2014",
+            description: "The art of Eric Lacombe delves into those deep dark recesses of the mind that we all possess but few acknowledge. His Paintings explore the darker themes of the human psyche. A melancholic undertone permeates all his works and immerses the viewer in a world where the monster of despair lurks in the corners."
+        )
+
+melancholy_art3 = Art.create(
+            mood_id: melancholy.id,
+            title: "Melancholy",
+            artist: "Odilon Redon",
+            genre: "Painting",
+            img_url: "https://www.paintingstar.com/static/gallery/2013/02/20/52fe726442712.jpg?Melancholy+Artwork+by+Odilon+Redon",
+            year: "1876",
+            description: "Odilon Redon was a French symbolist painter, printmaker, draughtsman and pastellist. Early in his career, both before and after fighting in the Franco-Prussian War, he worked almost exclusively in charcoal and lithography, works referred to as noirs. He started gaining recognition after his drawings were mentioned in the 1884 novel À rebours by Joris-Karl Huysmans. During the 1890s he began working in pastel and oils, which quickly became his favourite medium, abandoning his previous style of noirs completely after 1900. He also developed a keen interest in Hindu and Buddhist religion and culture, which increasingly showed in his work."
+        )
+
+melancholy_quote1 = Quote.create(
+            mood_id: melancholy.id,
+            author: "Ivy Baker Priest",
+            body: "The world is round, and the place which may seem like the end may also be only the beginning.",
+            wiki_link: "https://en.wikipedia.org/wiki/Ivy_Baker_Priest"
+        )
+
+melancholy_quote2 = Quote.create(
+            mood_id: melancholy.id,
+            author: "Henry Moore",
+            body: "I think in terms of the day's resolutions, not the years'.",
+            wiki_link: "https://en.wikipedia.org/wiki/Henry_Moore"
+        )
+
+
+melancholy_quote3 = Quote.create(
+            mood_id: melancholy.id,
+            author: "Louis L'Amour",
+            body: "There will be a time when you believe everything is finished. That will be the beginning.",
+            wiki_link: "http://www.louislamour.com/"
         )
 
 
