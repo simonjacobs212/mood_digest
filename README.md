@@ -1,5 +1,3 @@
-# mood_digest
-A daily digest of culture and inspiration, tailored to your mood to start your day.
 <h1 style="text-align: center">Mood Digest</h1>
 
 <img src="https://cutt.ly/gkw1rsV" alt="Feelings">
