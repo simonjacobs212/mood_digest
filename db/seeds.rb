@@ -172,9 +172,9 @@ sad_quote2 = Quote.create(
 
 sad_quote3 = Quote.create(
             mood_id: sad.id,
-            author: "Chinese proverb",
-            body: "Happiness is not an ideal of reason, but of imagination.",
-            wiki_link: "https://en.wikiquote.org/wiki/Chinese_proverbs"
+            author: "Austin O'Malley",
+            body: "Sorrow like rain makes roses and mud.",
+            wiki_link: "https://en.wikipedia.org/wiki/Austin_O%27Malley_(author)"
         )
 
 

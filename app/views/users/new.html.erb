@@ -19,13 +19,13 @@
 <div class="container py-5">
 
 <div class="row text-center text-black mb-5 py-4">
-        <div class="h2font col-lg-9 mx-auto">
+        <div class="h2fontlog col-lg-9 mx-auto">
             <h2>Registration</h2>
             </div>
             </div> 
             <br>
-
-<div class="h2font"><%= form_for @user do |f| %>
+        <div class="h2fontlog">
+    <%= form_for @user do |f| %>
     <%= f.label :first_name %> <%= f.text_field :first_name %>
     <br>
     <br>
@@ -38,7 +38,7 @@
     <%= f.label :password %> <%= f.password_field :password %>
     <br>
     <br>
-    <%= f.submit %>
+    <%= f.submit "Create User", class: "btn btn-outline-light px-4 rounded-0 scroll-top"%>
     <br>
     <br>
 <%end%>
